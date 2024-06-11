@@ -50,6 +50,7 @@ DATA_STATIONTYPE = "stationtype"
 DATA_FREQ = "freq"
 DATA_MODEL = "model"
 DATA_READY = "ready"
+DATA_RUNTIME = "runtime"
 REG_ENTITIES = "registered"
 
 DEFAULT_PORT = 4199
@@ -801,4 +802,5 @@ IGNORED_SENSORS = [
     DATA_STATIONTYPE,
     DATA_FREQ,
     DATA_MODEL,
+    DATA_RUNTIME,
 ]
