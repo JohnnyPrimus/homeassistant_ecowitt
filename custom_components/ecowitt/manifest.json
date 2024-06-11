@@ -1,9 +1,9 @@
 {
   "domain": "ecowitt",
   "name": "Ecowitt Weather Station",
-  "version": "0.8",
+  "version": "0.9",
   "config_flow": true,
-  "documentation": "https://www.home-assistant.io/integrations/ecowitt",
+  "documentation": "https://github.com/JohnnyPrimus/homeassistant_ecowitt/blob/master/README.md",
   "requirements": [
     "pyecowitt==0.14"
   ],
@@ -12,6 +12,6 @@
   "homekit": {},
   "dependencies": [],
   "codeowners": [
-    "@garbled1"
+    "@JohnnyPrimus", "@garbled1"
   ]
 }
