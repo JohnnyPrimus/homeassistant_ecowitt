@@ -1,7 +1,7 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg)](https://github.com/custom-components/hacs)
 
-# Ecowitt Weather Station integration for home-assistant
-Ecowitt driver for homeassistant
+# Ecowitt Weather Station integration for Home Assistant
+Ecowitt integration for Home Assistant
 
 ![Bling](https://raw.githubusercontent.com/garbled1/homeassistant_ecowitt/master/md.images/overview.png)
 
@@ -44,41 +44,6 @@ marked with a status of "Restored".
 You can safely delete the old sensor once you validate you are seeing data
 on the new one.
 Be sure to update any automations/etc that reference the old sensor.
-
-
-### Breaking changes
-
-Version 0.5 converts this to a config flow from the previous yaml config method.
-Once you restart hass, it will attempt to read your old config from yaml, and
-port it over to the config flow.
-Verify that it did so correctly, and double check the options match what you
-expect for the units under "Options".
-
-Additionally in 0.5, the battery sensors have been significantly changed.
-Previously all batteries were simple floats with the raw value displayed.
-There are 3 types of batteries that the ecowitt displays data for:
-
-* Simple good/bad batteries.  These are now binary sensors.  This will leave
-  A dead entry in your entities for the old battery sensor.  You may safely
-  delete that entity.
-* Voltage readings.  A few batteries display a voltage (soil, WH80).
-  A soil battery is normally 1.5v, so a good alarm might be around 1.3?
-  WH80 batteries seem to be about 2.38 - 2.4, so maybe in the 2.3 to 2.2 range
-  for an alarm?
-* Other batteries will now show as a percentage.
-  The raw sensor gives a number from 0-5, this is simply multiplied by 20
-  to give a percentage of 0-100.
-
-If you were monitoring one of these, be sure to update any automations.
-
-There was a bug in the wind gust sensors, where it was not being affected by
-the windunit setting, once you load 0.5, you may find a dead entity for your
-wind gust sensors that were setup for the wrong unit.
-You may delete these.
-
-Once your configuration has been moved, you should delete the old ecowitt
-section from your configuration.yaml file and restart hass.
-
 
 ## How to set up:
 
@@ -147,7 +112,7 @@ You can easily set it up to combine local data from your sensors, with
 forcast data from external sources for sensors you don't have
 (like pollen counts, for example).
 
-This is a copy of my setup.
+This is a copy of garbled1's setup.
 Sensors named with the sensor.cc_ are from the climacell external source,
 other sensors are my local weatherstation.
 
